@@ -30,25 +30,25 @@
     <!-- <seriesInfo name="RFC" value="5884"/> -->
     <seriesInfo name="Internet-Draft" value="draft-ietf-bfd-rfc5884-bis-01"/>
     <author initials="R." surname="Aggarwal" fullname="Rahul Aggarwal">
-      <organization>Juniper Networks</organization>
+      <organization>HPE</organization>
       <address>
         <postal>
           <street>1194 N. Mathilda Ave.</street>
           <street>Sunnyvale, CA  94089</street>
           <street>USA</street>
         </postal>
-        <email>rahul@juniper.net</email>
+        <email>rahul@hpe.com</email>
       </address>
     </author>
     <author initials="K." surname="Kompella" fullname="Kireeti Kompella">
-      <organization>Juniper Networks</organization>
+      <organization>HPE</organization>
       <address>
         <postal>
           <street>1194 N. Mathilda Ave.</street>
           <street>Sunnyvale, CA  94089</street>
           <street>USA</street>
         </postal>
-        <email>kireeti@juniper.net</email>
+        <email>kireeti@hpe.com</email>
       </address>
     </author>
     <author initials="T." surname="Nadeau" fullname="Thomas D. Nadeau">
@@ -85,6 +85,7 @@
       <organization>Ciena</organization>
       <address>
         <email>gregimirsky@gmail.com</email>
+		  <email>gmirsky@ciena.com</email>
       </address>
     </author>
     <author initials="S." surname="Aldrin" fullname="Sam Aldrin">
