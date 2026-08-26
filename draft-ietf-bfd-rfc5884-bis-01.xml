@@ -30,13 +30,8 @@
     <!-- <seriesInfo name="RFC" value="5884"/> -->
     <seriesInfo name="Internet-Draft" value="draft-ietf-bfd-rfc5884-bis-01"/>
     <author initials="R." surname="Aggarwal" fullname="Rahul Aggarwal">
-      <organization>HPE</organization>
+      <organization>NVIDIA</organization>
       <address>
-        <postal>
-          <street>1194 N. Mathilda Ave.</street>
-          <street>Sunnyvale, CA  94089</street>
-          <street>USA</street>
-        </postal>
         <email>rahul@hpe.com</email>
       </address>
     </author>
