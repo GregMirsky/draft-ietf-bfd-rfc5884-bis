@@ -520,7 +520,8 @@
     <ul>
     <li>If the validation of the FEC in the MPLS Echo request message succeeds, check the discriminator specified in the BFD discriminator TLV of the MPLS Echo request. If there is no local session that corresponds to the (remote) discriminator received in the MPLS Echo request, a new session is bootstrapped and a local discriminator is allocated. The validation of a FEC is a necessary condition to be satisfied to create a new BFD session at the egress LSR. However, the policy or procedure if any, to be applied by the egress LSR before allowing a new BFD session to be created is outside the scope of this document. Such policies or procedures could consider availability of system resources before allowing a session to be created. When the egress LSR disallows the creation of a BFD session due to policy, it MUST drop the MPLS Echo request message.</li>
     <li> Ensure the uniqueness of the &lt;MPLS FEC, LSP, Remote Discriminiator&gt; tuple.</li>
-    <li>Except for the clarification mentioned above, the remaining procedures of BFD session establishment are as specified in Sections 4-6 of <xref target="RFC5884" />.</li>
+    <li>Except for the clarification mentioned above, the remaining procedures of BFD session establishment
+		are as specified in <xref target="sect-4"/>, <xref target="sect-5"/>, and <xref target="sect-6"/>.</li>
     </ul>
     </section>
 
@@ -529,7 +530,9 @@
     </section>
 
     <section title="Procedures for removing BFD sessions at the egress LSR">
-    <t> <xref target="RFC5884" /> does not specify an explicit procedure for deleting BFD sessions. The procedure for removing a BFD session established by an out-of-band discriminator exchange using the MPLS LSP ping can improve resource management (like memory etc.) especially in scenarios involving thousands or more of such sessions. A few observations are made here:</t>
+    <t> The procedure for removing a BFD session established by an out-of-band discriminator exchange using
+		the MPLS LSP ping can improve resource management (like memory etc.) especially
+		in scenarios involving thousands or more of such sessions. A few observations are made here:</t>
     <ul>
     <li> The BFD session MAY be removed in the egress LSR if the BFD session transitions from UP to DOWN.  This can either be done immediately after the BFD session transitions from UP to DOWN  or after the  expiry of a configurable timer started after the BFD  session state  transitions from UP to DOWN at the egress LSR to reduce flapping by adding hysteresis.</li>
 
@@ -542,12 +545,6 @@
 
     <section title="Changing discriminators for a BFD session">
     <t>The discriminators of a BFD session established over an MPLS LSP cannot be changed when it is in UP state. The BFD session could be removed after a graceful transition to AdminDown state using the BFD diagnostic code AdminDown. A new session could be established with a different discriminator. The initiation of the transition from the Up to Down state can be done either by the ingress LSR or the egress LSR.</t>
-    </section>
-
- 
-    <section anchor="sect-77.5" numbered="true" toc="default">
-    <name>Backwards Compatibility</name>
-<t> The procedures clarified by this document are fully backward compatible with an existing implementation of <xref target="RFC5884" />. While the capability to bootstrap and maintain multiple BFD sessions may not be present in current implementations, the procedures outlined by this document can be implemented as a software upgrade without affecting existing sessions. In particular, the egress LSR needs to support multiple BFD sessions per &lt;MPLS FEC, LSP&gt; before the ingress LSR is upgraded. </t>
     </section>
    </section>
 
@@ -563,7 +560,9 @@
    apply.  These are discussed in <xref target="RFC5920" format="default"/>.  When BFD Control packets
    sent by the egress LSR are routed, the authentication considerations
    discussed in <xref target="RFC5883"/> should be followed.</t>
-      <t> It is highly important to ensure only minimum number of BFD sessions are provisioned per FEC, and bootstrapped BFD sessions are properly deleted when no longer required. Additionally security measures described in <xref target="RFC8029" /> and <xref target="RFC5884" /> are to be followed.</t>
+      <t> It is highly important to ensure that only the minimum number of BFD sessions are provisioned per FEC,
+		  and bootstrapped BFD sessions are properly deleted when no longer required.
+		  Additionally security measures described in <xref target="RFC8029"/> are to be followed.</t>
     </section>
     <section anchor="sect-9" numbered="true" toc="default">
       <name>IANA Considerations</name>
@@ -625,10 +624,10 @@
 	  loopback addresses is not natively supported by the IPv6 addressing architecture.
 	</t>
 	<t>
-	  During the original development of <xref target="RFC5884"/>, architectural
+	  During the original development of IP/UDP-encapsulated OAM over MPLS, architectural
 	  compliance aspects regarding IPv4-mapped loopback addresses were discussed, but
 	  these considerations were not fully incorporated into the published specification.
-	  Because commercial implementations based on <xref target="RFC5884"/> have been widely
+	  Because commercial implementations have been widely
 	  deployed using IPv4-mapped addresses, interoperability and backward compatibility
 	  remain crucial requirements. Consequently, the addressing recommendations in this
 	  document account for existing deployed behavior and may not strictly align with the
