@@ -558,19 +558,19 @@
       <t>
    Security considerations discussed in <xref target="RFC5880"/>, <xref target="RFC5883"/>, and <xref target="RFC8029" format="default"/>
    apply to this document.  For BFD Control packets sent by the ingress
-   LSR or when the BFD Control packet sent by the egress LSR are
+   LSR or when the BFD Control packet is sent by the egress LSR that are
    encapsulated in an MPLS label stack, MPLS security considerations
    apply.  These are discussed in <xref target="RFC5920" format="default"/>.  When BFD Control packets
    sent by the egress LSR are routed, the authentication considerations
    discussed in <xref target="RFC5883"/> should be followed.</t>
-      <t> It is highly important to ensure only minimum number of BFD sessions are provisioned per FEC, and bootstrapped BFD sessions are properly deleted when no longer required. Additionally security measures described in <xref target="RFC8029" /> and <xref target="RFC5884" /> are to be followed.</t>
+      <t> It is highly important to ensure only the minimum number of BFD sessions are provisioned per FEC, and bootstrapped BFD sessions are properly deleted when no longer required. Additionally security measures described in <xref target="RFC8029" /> and <xref target="RFC5884" /> are to be followed.</t>
     </section>
     <section anchor="sect-9" numbered="true" toc="default">
       <name>IANA Considerations</name>
       <t>
    This document introduces a BFD discriminator TLV in LSP Ping.  The
-   BFD Discriminator has been assigned a value of 15 from the LSP Ping
-   TLVs and sub-TLVs registry maintained by IANA.</t>
+   BFD Discriminator has been assigned a value of 15 from the “TLVs” registry
+   in the “Multiprotocol Label Switching (MPLS) Label Switched Paths (LSPs) Ping Parameters” registry group.</t>
     </section>
     <section anchor="sect-10" numbered="true" toc="default">
       <name>Acknowledgments</name>
